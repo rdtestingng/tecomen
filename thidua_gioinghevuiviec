@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chọn đề ngẫu nhiên</title>
+
+  <script>
+    const forms = [
+      "https://forms.gle/ot4C3bsgww2QXMbZ8",
+      "https://forms.gle/n68T5rZEvWgjQ3Mr8",
+      "https://forms.gle/ciDETvp2RR6BTyuG6",
+      "https://forms.gle/kTDRks4k7rpg2uy49"
+    ];
+
+    // Chọn 1 link duy nhất
+    const selectedForm =
+      forms[Math.floor(Math.random() * forms.length)];
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // Gán cho link thủ công
+      document.getElementById("manualLink").href = selectedForm;
+
+      // Chuyển hướng (không lưu history)
+      window.location.replace(selectedForm);
+    });
+  </script>
+</head>
+
+<body>
+  <h1>Đang chọn đề...</h1>
+  <p>
+    Nếu bạn không được chuyển hướng,
+    hãy <a id="manualLink" href="#">bấm vào đây</a>.
+  </p>
+
+  <noscript>
+    <p>Vui lòng bật JavaScript để tiếp tục.</p>
+  </noscript>
+</body>
+</html>
